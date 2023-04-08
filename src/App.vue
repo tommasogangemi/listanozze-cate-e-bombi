@@ -16,5 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import CFG from '@/cfg'
+import { CFG } from '@/cfg'
+import { useSpreadsheet } from './composables/useSpreadsheet'
+
+const { get } = useSpreadsheet(CFG.spreadSheetIds.gifts)
+
+get()
 </script>
