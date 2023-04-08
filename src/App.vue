@@ -2,7 +2,7 @@
   <header></header>
 
   <main>
-    <h2>Nè di Venere nè di Marte...</h2>
+    <h2>Nè di Venere nè di Marte..</h2>
 
     <div v-for="item in LIST" :key="item.id">
       <div>
