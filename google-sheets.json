@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cate-e-bombi",
+  "private_key_id": "91b455ab670d558c8ab87540095b98dd525f8636",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8nhqXUEB3AID7\n7/fOwaW39UKngFhEdb4LDv0t1EI3e9U00wa2CT9N/niYd61cQXMc8oiP6xJX+qrE\nPoXwA1347nhDy4mffYSFNsjQjl4wjK6q6j8kgFL5id37/okBMIFl63Y04742UIFR\ney87QNrkJX9686IuMGmTOMh2e7ETAKBb+XfqTtU07mV1NLlVfYIAqKrRSt+GcPcI\nRR6LDMVSmLCOHzEWK8FI7pw94WxL+ElJOk165vN2liTcS8ToZsZNkNvcD+31b9V8\nRjKtkTKCcJYx9czCJgAni2GA+8rH/neB8LedrDxL5NF7KFrHOupCTI6c0nBALA7n\nMCs1BOx/AgMBAAECggEAIvxAemiMTIZvZkuwb01D68c2QdNwi+I7CdoR4/pG/fue\nJFowGHvGnjThMYahRUdujqP96JP1pxP7sMLYHRjCyXWSISETud2SQxNSVDzUA7VU\ngKdKZv7WZSrJXgBscSgKGFmAZ3cGxRRRqEdtD1SMRV0fNDMUlfSs4H3b0P5IbfmS\nNLuxF2NqdpYcMHjgrgWPeYNNLGaNCWMYmBnrkwDyj+1noS2yi6erC+by829LcJGj\nc/c5T60nk/m1hZNbmA4RZc9JqSjoBBqi2V1+P44TL8EvpqFbDIVTBObCyd9gT3H2\nr6XnpKfpefbgjPJSautUhf7GQSmSucuvfxa3MFfIQQKBgQDjO44Hn7jiT+wbU++H\nDNjmzAAiH0/xb+1uiFl0iZ63zYhrloBMiqi5TKas3Qq1vVNC2zcnwKYVDmQ4hCWV\nnmtBYRQBim3Er0sHvv22aTmaLH2FyawcUxSnn2OqrE8Y5gshACdt390luQbzJzby\nAKyQx/QdY3qZOM+tTbYHDU+wKQKBgQDUfxBBIybMsUZLrRVTKOwX0EWqeyWbydqt\nlNfKavgrqJzfUlE7HQdllUzCxBu6Wc325WfekcRhX6jrmeuy4akaiJEUxVKdlfId\nQqAEX7Z5TCuEJ5JZ90XrkKAub4sJrwXTUGkEx9e4RYdNhq2cYzPOHrWFMJYCl9zm\nzlUHR/4sZwKBgBdtm34zvJcw0FIc/FQ7Qd3B6L2b5t0owh0kV7zJN6ERwt/822uI\n3E6GlaS7AZCtXXlGKtChbz46hqDBFzLu63YJMUvbXufpft3kljoJbVP1BFgX6/Pb\nqQSDTX5aV6lkhn83idktPJrYEdxeDa8z3Jbs1sF08T38+oSOv5bIi4/JAoGANg3I\ndblaYlFp/1AdD5VmUTxyrEY9L97uGJ+3MM97J6fxl8FZ1n6w5f9Pkm/OWd4ETZzX\nij9sRBTQZHY4Bb3vhUdeGHmFZX7CIv1StSofwcVFgI2MZgRHrf+RL57CMIlsIu/e\ndw/a6Q4OuALdYN2/TNx08leEoU4+LBwqdvqyRlsCgYBSOuTMce1u2kDApT2Ht3gT\n1dOVFfAdp17l4FwbqcwO879XEh1HU8PCEcapAhiCweJtOxfGd//a0C6HUqMILIZV\nrOv2DQux0HB3rxydsG0n7pC6qc1qXtMr1Hy0wuihO4k9aBi8Tqx++ZgnWYVXGtKD\n1/rY5WPF/fKQrgiqjz46cg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tommaso-gangemi@cate-e-bombi.iam.gserviceaccount.com",
+  "client_id": "101482846715316310527",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tommaso-gangemi%40cate-e-bombi.iam.gserviceaccount.com"
+}

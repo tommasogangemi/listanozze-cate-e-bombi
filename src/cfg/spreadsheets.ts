@@ -1,0 +1,6 @@
+const PREVIEW_GIFTS_SPREADSHEET = '12QeBPbBQCMHlzACY_uP7EG6IvP4bnmTindY9E9HpLB4'
+const GIFTS_SPREADSHEET = '1QYFN4uSr7b_kE53LxtqvGT5kdKjS0Jd2m2jPh4MTXGs'
+
+export const spreadSheetIds = {
+  gifts: process.env.NODE_ENV === 'production' ? GIFTS_SPREADSHEET : PREVIEW_GIFTS_SPREADSHEET
+}
