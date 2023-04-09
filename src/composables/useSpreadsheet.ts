@@ -1,16 +1,16 @@
-import { useGoogleSheets } from './useGoogleSheets'
+import { CFG } from '@/cfg'
+import type google from 'googleapis'
+
+const BASE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/'
 
 export const useSpreadsheet = (spreadsheetId: string) => {
   const get = async () => {
-    const googleSheets = await useGoogleSheets()
+    const res = await fetch(`${BASE_URL}${spreadsheetId}?key=${CFG.googleApiKey}`)
+    const data = await res.json()
 
-    const spreadSheet = await googleSheets.spreadsheets.get({
-      spreadsheetId
-    })
+    console.log('GET', data)
 
-    console.log('GET', spreadSheet)
-
-    return spreadSheet
+    return data as google.sheets_v4.Schema$Spreadsheet
   }
 
   return {
