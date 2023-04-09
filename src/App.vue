@@ -13,6 +13,10 @@
       <img :src="item.image" :alt="item.name" width="500" />
     </div> -->
 
+    <Suspense>
+      <List />
+    </Suspense>
+
     <img class="w-100" src="@/assets/landing_img.jpg" alt="landing" />
 
     <div class="w-100 py-16 d-flex justify-center align-center">
@@ -23,9 +27,5 @@
 
 <script setup lang="ts">
 import { CFG } from '@/cfg'
-// import { useSpreadsheet } from './composables/useSpreadsheet'
-
-// const { get } = useSpreadsheet(CFG.spreadSheetIds.gifts)
-
-// get()
+import List from './components/List.vue'
 </script>
