@@ -16,7 +16,7 @@
     <img class="w-100" src="@/assets/landing_img.jpg" alt="landing" />
 
     <div class="w-100 py-16 d-flex justify-center align-center">
-      <h1 class="text-primary font-weight-bold">...coming soon</h1>
+      <h1 class="text-white font-weight-bold">...coming soon</h1>
     </div>
   </main>
 </template>
