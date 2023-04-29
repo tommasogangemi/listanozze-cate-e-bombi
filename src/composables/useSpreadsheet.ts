@@ -1,19 +1,21 @@
-import { CFG } from '@/cfg'
-import type google from 'googleapis'
-
-const BASE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/'
+import { appendToSpreadSheet } from '@/api/appendToSpreadsheet'
+import { loadSpreadsheet } from '@/api/loadSpreadsheet'
+import type { SpreadSheet } from '@/api/utils'
+import { ref } from 'vue'
 
 export const useSpreadsheet = (spreadsheetId: string) => {
-  const get = async () => {
-    const res = await fetch(
-      `${BASE_URL}${spreadsheetId}?key=${CFG.googleApiKey}&includeGridData=true`
-    )
-    const data: google.sheets_v4.Schema$Spreadsheet = await res.json()
+  const spreadSheet = ref<SpreadSheet>()
 
-    return data
+  const get = async () => {
+    spreadSheet.value = await loadSpreadsheet(spreadsheetId)
   }
 
+  const addRow = async (sheetName: string, values: string[][]) =>
+    appendToSpreadSheet(spreadsheetId, sheetName, values)
+
   return {
-    get
+    spreadSheet,
+    get,
+    addRow
   }
 }

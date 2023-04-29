@@ -17,15 +17,14 @@
       <List />
     </Suspense>
 
-    <img class="w-100" src="@/assets/landing_img.jpg" alt="landing" />
+    <!-- <img class="w-100" src="@/assets/landing_img.jpg" alt="landing" />
 
     <div class="w-100 py-16 d-flex justify-center align-center">
       <h1 class="text-white font-weight-bold">...coming soon</h1>
-    </div>
+    </div> -->
   </main>
 </template>
 
 <script setup lang="ts">
-import { CFG } from '@/cfg'
 import List from './components/List.vue'
 </script>
