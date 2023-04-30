@@ -13,10 +13,10 @@
     </v-row>
 
     <v-row>
-      <v-col cols="auto">
+      <v-col cols="auto" order="2" order-md="1">
         <v-img src="https://via.placeholder.com/1280x720" width="396" class="rounded-lg" />
       </v-col>
-      <v-col>
+      <v-col order="1" order-md="2">
         <div>
           <span class="text-primary font-weight-bold mr-2">Vi aspettiamo il:</span>
           <span>2 settembre 2023 ore 11:30</span>
