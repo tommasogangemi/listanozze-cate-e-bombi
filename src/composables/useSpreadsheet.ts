@@ -3,9 +3,9 @@ import { loadSpreadsheet } from '@/api/loadSpreadsheet'
 import type { SpreadSheet } from '@/api/utils'
 import { ref } from 'vue'
 
-export const useSpreadsheet = (spreadsheetId: string) => {
-  const spreadSheet = ref<SpreadSheet>()
+const spreadSheet = ref<SpreadSheet>()
 
+export const useSpreadsheet = (spreadsheetId: string) => {
   const get = async () => {
     spreadSheet.value = await loadSpreadsheet(spreadsheetId)
   }

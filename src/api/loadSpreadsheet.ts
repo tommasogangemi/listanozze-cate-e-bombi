@@ -4,8 +4,6 @@ import type google from 'googleapis'
 import { getToken } from './authToken'
 
 export const loadSpreadsheet = async (spreadsheetId: string) => {
-  console.log('aaaaaaaaaaaaaa LOAD SHEET')
-
   const { access_token } = await getToken()
 
   const res = await fetch(`${CFG.baseUrl}/${spreadsheetId}?includeGridData=true`, {

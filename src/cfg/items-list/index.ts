@@ -1,4 +1,25 @@
-import PRODUCTION_LIST from './production'
-import PREVIEW_LIST from './preview'
+import type { ProductConfig } from './types'
 
-export const itemsList = process.env.NODE_ENV === 'production' ? PRODUCTION_LIST : PREVIEW_LIST
+export const itemsList: ProductConfig[] = [
+  {
+    id: 1,
+    name: 'Product 1',
+    description: 'Product 1 description',
+    price: 100,
+    image: 'https://via.placeholder.com/1280x720'
+  },
+  {
+    id: 2,
+    name: 'Product 2',
+    description: 'Product 2 description',
+    price: 200,
+    image: 'https://via.placeholder.com/1280x720'
+  },
+  {
+    id: 3,
+    name: 'Product 3',
+    description: 'Product 3 description',
+    price: 300,
+    image: 'https://via.placeholder.com/1280x720'
+  }
+]
