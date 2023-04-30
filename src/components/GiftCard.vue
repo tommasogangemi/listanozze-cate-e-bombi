@@ -17,7 +17,7 @@
 
       <div class="d-flex justify-space-between">
         <span>Contiributo libero</span>
-        <span>Disponibili: 000€</span>
+        <span>Disponibili: TBD€</span>
       </div>
     </v-card-text>
   </v-card>
@@ -37,6 +37,4 @@ type Props = {
 const props = defineProps<Props>()
 
 const { gift } = toRefs(props)
-
-const isAlreadyGifted = false
 </script>
