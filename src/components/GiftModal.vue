@@ -30,7 +30,7 @@
                   class="font-weight-medium text-primary d-flex justify-space-between align-center"
                 >
                   <span class="text-h4">{{ gift.name }}</span>
-                  <span class="text-h5">Disponibili: TBD€</span>
+                  <span class="text-h5">Disponibili: {{ gift.availableAmount }}€</span>
                 </v-col>
               </v-row>
               <!-- CONTENT ROW -->
@@ -43,14 +43,14 @@
                   <div class="mb-4">Dai il tuo contributo</div>
                   <v-form ref="giftForm" v-model="isFormValid">
                     <v-text-field
-                      v-model="formState.name"
+                      v-model="formState.donorName"
                       label="Inserisci il tuo nome"
                       density="compact"
                       class="mb-2"
                       :rules="[mandatory]"
                     />
                     <v-text-field
-                      v-model="formState.amount"
+                      v-model="formState.donatedAmount"
                       label="Inserisci quanto vorresti donare"
                       append-inner-icon="mdi-currency-eur"
                       density="compact"
@@ -64,7 +64,15 @@
                       class="mb-2"
                     />
                   </v-form>
-                  <v-btn :disabled="!isFormValid" color="primary" flat>Conferma</v-btn>
+
+                  <v-btn
+                    :disabled="!isFormValid || isUpdating"
+                    :loading="isUpdating"
+                    color="primary"
+                    flat
+                    @click="handleSubmit"
+                    >Conferma</v-btn
+                  >
                 </v-col>
               </v-row>
             </v-col>
@@ -76,7 +84,8 @@
 </template>
 
 <script setup lang="ts">
-import type { EnrichedGift } from '@/composables/useSpreadsheet'
+import type { EnrichedGift, UserSheetInputs } from '@/composables/useSpreadsheet'
+import { useSpreadsheet } from '@/composables/useSpreadsheet'
 import { ref } from 'vue'
 import { toRefs } from 'vue'
 import { defineComponent } from 'vue'
@@ -98,15 +107,19 @@ type Emits = {
 
 const props = defineProps<Props>()
 
-defineEmits<Emits>()
+const emit = defineEmits<Emits>()
 
 const { gift, show } = toRefs(props)
 
+const { addRow } = useSpreadsheet()
+
 const giftForm = ref<VForm>()
 const isFormValid = ref(false)
-const formState = ref({
-  name: '',
-  amount: '',
+const isUpdating = ref(false)
+
+const formState = ref<UserSheetInputs>({
+  donorName: '',
+  donatedAmount: '',
   message: ''
 })
 
@@ -116,5 +129,12 @@ const validateNumberField = (v?: string) => {
   if (!v) return 'Campo obbligatorio'
   if (isNaN(Number(v))) return 'Per favore inserisci un numero valido'
   return true
+}
+
+const handleSubmit = async () => {
+  isUpdating.value = true
+  await addRow(gift?.value?.name!, formState.value)
+  isUpdating.value = false
+  emit('close-modal')
 }
 </script>

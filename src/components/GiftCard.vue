@@ -9,7 +9,13 @@
     <v-divider class="mb-2" />
 
     <v-card-text>
-      <v-progress-linear :model-value="25" color="primary" height="15" rounded class="mb-4">
+      <v-progress-linear
+        :model-value="gift.donatedPercentage"
+        color="primary"
+        height="15"
+        rounded
+        class="mb-4"
+      >
         <template v-slot:default="{ value }">
           <strong>{{ Math.ceil(value) }}%</strong>
         </template>
@@ -17,7 +23,7 @@
 
       <div class="d-flex justify-space-between">
         <span>Contiributo libero</span>
-        <span>Disponibili: TBD€</span>
+        <span>Disponibili: {{ gift.availableAmount }}€</span>
       </div>
     </v-card-text>
   </v-card>

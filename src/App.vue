@@ -1,5 +1,5 @@
 <template>
-  <v-app class="bg-neutral-lighten-1">
+  <v-app class="bg-neutral-lighten">
     <v-main>
       <v-row justify="center">
         <v-col cols="12" md="8">

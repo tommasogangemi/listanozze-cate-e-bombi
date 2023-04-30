@@ -1,5 +1,5 @@
 import { itemsList } from './items-list'
-import { spreadSheetIds } from './spreadsheets'
+import { spreadSheetId } from './spreadsheets'
 
 const GOOGLE_API_KEY = 'AIzaSyDW-uIMe2u7DG9ey0GeY2UKncSOnyoLhRU'
 const BASE_URL = 'https://sheets.googleapis.com/v4/spreadsheets'
@@ -10,7 +10,7 @@ console.log('NODE ENV', process.env.NODE_ENV)
 
 export const CFG = {
   itemsList,
-  spreadSheetIds,
+  spreadSheetId,
   googleApiKey: GOOGLE_API_KEY,
   googleClientId: GOOGLE_CLIENT_ID,
   baseUrl: BASE_URL,
