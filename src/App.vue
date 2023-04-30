@@ -1,11 +1,13 @@
 <template>
-  <header></header>
+  <v-app class="bg-neutral">
+    <header></header>
 
-  <main class="h-100">
-    <Suspense>
-      <List />
-    </Suspense>
-  </main>
+    <v-main>
+      <Suspense>
+        <List />
+      </Suspense>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup lang="ts">

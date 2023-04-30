@@ -1,4 +1,4 @@
-export type ProductConfig = {
+export type GiftConfig = {
   id: number
   name: string
   description: string

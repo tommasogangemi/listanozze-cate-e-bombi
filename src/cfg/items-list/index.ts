@@ -1,6 +1,6 @@
-import type { ProductConfig } from './types'
+import type { GiftConfig } from './types'
 
-export const itemsList: ProductConfig[] = [
+export const itemsList: GiftConfig[] = [
   {
     id: 1,
     name: 'Product 1',

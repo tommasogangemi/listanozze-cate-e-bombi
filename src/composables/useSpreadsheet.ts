@@ -1,7 +1,10 @@
 import { appendToSpreadSheet } from '@/api/appendToSpreadsheet'
 import { loadSpreadsheet } from '@/api/loadSpreadsheet'
 import type { SpreadSheet } from '@/api/utils'
+import type { GiftConfig } from '@/cfg/items-list/types'
 import { ref } from 'vue'
+
+export type EnrichedGift = GiftConfig
 
 const spreadSheet = ref<SpreadSheet>()
 
