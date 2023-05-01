@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="donationsWithMessages.length > 4">
+  <v-container v-if="donationsWithMessages.length > 3">
     <v-row align="center" class="mb-4">
       <v-col>
         <v-divider />
@@ -16,13 +16,20 @@
       <v-col cols="12" md="10">
         <v-card flat variant="outlined" class="bg-white overflow-y-auto" height="408">
           <v-card-text class="py-0">
-            <template v-for="(donation, idx) in donationsWithMessages" :key="donation.message">
+            <template
+              v-for="(donationMessage, idx) in donationsWithMessages"
+              :key="donationMessage.message"
+            >
               <v-row class="my-2">
                 <v-col cols="12">
                   <div>
-                    <span class="text-primary font-weight-medium">{{ donation.donorName }}</span>
+                    <span class="text-primary font-weight-bold">
+                      {{ donationMessage.donorName }}
+                    </span>
+                    <span class="text-grey"> - </span>
+                    <span class="text-grey">{{ donationMessage.date }}</span>
                   </div>
-                  <div>{{ donation.message }}</div>
+                  <div>{{ donationMessage.message }}</div>
                 </v-col>
               </v-row>
 

@@ -51,8 +51,8 @@ export const useSpreadsheet = () => {
   const addRow = async (sheetName: string, inputs: UserSheetInputs) => {
     // turning object into array of cells and adding the current date cell
     const values = [
-      ORDERED_USER_INPUTS.map((key) => inputs[key] ?? ''),
       [
+        ...ORDERED_USER_INPUTS.map((key) => inputs[key] ?? ''),
         new Date().toLocaleDateString('it-IT', {
           year: 'numeric',
           month: 'long',
