@@ -31,7 +31,12 @@ const parseSingleSheet = (sheet: google.sheets_v4.Schema$Sheet): Sheet => {
       ({ values }) => values?.map((v) => v.effectiveValue?.stringValue) ?? []
     ) ?? []
 
-  const [headers, ...rows] = rawRowsArray.map((row) => row.filter((cell): cell is string => !!cell))
+  const [headers, ...rows] = rawRowsArray.map((row) =>
+    // keeping all the cells that are relevant to us, and discarding all the remaining empty ones
+    row.filter((cell, idx): cell is string => idx < 4 || !!cell)
+  )
+
+  console.log('aaaaaaaaaaaaaa', rows, rows.map(rowToObject))
 
   return {
     id: sheet.properties?.sheetId!,
