@@ -30,11 +30,11 @@ const refreshToken = async () => {
 
 export const getToken = async () => {
   if (!token) {
-    refreshToken()
+    await refreshToken()
   }
 
   if (isTokenAboutToExpire(token)) {
-    refreshToken()
+    await refreshToken()
   }
 
   return token
