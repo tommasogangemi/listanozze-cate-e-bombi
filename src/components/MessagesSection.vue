@@ -5,7 +5,7 @@
         <v-divider />
       </v-col>
       <v-col cols="auto">
-        <h2 id="messaggi" class="font-weight-medium">Messaggi</h2>
+        <h2 id="messaggi" class="text-accent font-weight-medium">Messaggi</h2>
       </v-col>
       <v-col>
         <v-divider />
@@ -23,7 +23,7 @@
               <v-row class="my-2">
                 <v-col cols="12">
                   <div>
-                    <span class="text-primary font-weight-bold">
+                    <span class="text-accent font-weight-bold">
                       {{ donationMessage.donorName }}
                     </span>
                     <span class="text-grey"> - </span>

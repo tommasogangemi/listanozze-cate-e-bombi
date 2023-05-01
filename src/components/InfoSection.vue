@@ -5,7 +5,7 @@
         <v-divider />
       </v-col>
       <v-col cols="auto">
-        <h2 id="informazioni" class="font-weight-medium">Informazioni</h2>
+        <h2 id="informazioni" class="text-accent font-weight-medium">Informazioni</h2>
       </v-col>
       <v-col>
         <v-divider />

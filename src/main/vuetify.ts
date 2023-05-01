@@ -23,6 +23,7 @@ export const vuetify = createVuetify({
           primary: '#465048',
           'primary-light': '#6f7d6d',
           accent: '#933e49',
+          pink: '#e2bcb8',
           neutral: '#EDEBEA',
           'neutral-lighten-1': 'f6f5f5',
           'neutral-lighten-2': '#fdfdfd',

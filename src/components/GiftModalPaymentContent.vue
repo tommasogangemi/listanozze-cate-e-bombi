@@ -30,7 +30,7 @@
     </div> -->
 
     <v-divider class="my-5" />
-    <div class="text-center text-primary text-h5 font-weight-bold">Grazie!</div>
+    <div class="text-center text-accent text-h5 font-weight-bold">Grazie!</div>
   </div>
 </template>
 

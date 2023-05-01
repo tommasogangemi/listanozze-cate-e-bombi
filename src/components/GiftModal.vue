@@ -4,19 +4,14 @@
     fullscreen
     :scrim="false"
     transition="dialog-bottom-transition"
-    content-class="bg-neutral"
     @update:model-value="closeModal()"
   >
-    <v-card v-if="!!gift">
+    <v-card v-if="!!gift" class="bg-primary-light">
       <v-card-text class="d-flex align-center">
         <v-container>
           <v-row justify="center">
             <v-col cols="12" md="10" class="px-0">
-              <v-btn
-                color="primary"
-                prepend-icon="mdi-arrow-left"
-                variant="text"
-                @click="closeModal()"
+              <v-btn color="accent" flat prepend-icon="mdi-arrow-left" @click="closeModal()"
                 >Torna alla lista</v-btn
               >
             </v-col>
