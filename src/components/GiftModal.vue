@@ -96,6 +96,12 @@ type VForm = {
 
 defineComponent({ name: 'GiftModal' })
 
+const getInitFormState = () => ({
+  donorName: '',
+  donatedAmount: '',
+  message: ''
+})
+
 type Props = {
   gift?: EnrichedGift
   show: boolean
@@ -117,11 +123,7 @@ const giftForm = ref<VForm>()
 const isFormValid = ref(false)
 const isUpdating = ref(false)
 
-const formState = ref<UserSheetInputs>({
-  donorName: '',
-  donatedAmount: '',
-  message: ''
-})
+const formState = ref<UserSheetInputs>(getInitFormState())
 
 const mandatory = (v?: string) => !!v || 'Campo obbligatorio'
 
@@ -135,6 +137,9 @@ const handleSubmit = async () => {
   isUpdating.value = true
   await addRow(gift?.value?.name!, formState.value)
   isUpdating.value = false
+
+  formState.value = getInitFormState()
+
   emit('close-modal')
 }
 </script>

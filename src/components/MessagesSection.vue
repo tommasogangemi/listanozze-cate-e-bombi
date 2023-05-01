@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="donationsWithMessages.length > 4">
     <v-row align="center" class="mb-4">
       <v-col>
         <v-divider />
@@ -12,8 +12,25 @@
       </v-col>
     </v-row>
 
-    <v-row>
-      <pre>{{ donations }}</pre>
+    <v-row justify="center">
+      <v-col cols="12" md="10">
+        <v-card flat variant="outlined" class="bg-white overflow-y-auto" height="408">
+          <v-card-text class="py-0">
+            <template v-for="(donation, idx) in donationsWithMessages" :key="donation.message">
+              <v-row class="my-2">
+                <v-col cols="12">
+                  <div>
+                    <span class="text-primary font-weight-medium">{{ donation.donorName }}</span>
+                  </div>
+                  <div>{{ donation.message }}</div>
+                </v-col>
+              </v-row>
+
+              <v-divider v-if="idx !== donationsWithMessages.length - 1" />
+            </template>
+          </v-card-text>
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -27,7 +44,7 @@ defineComponent({ name: 'MessagesSection' })
 
 const { spreadSheet } = useSpreadsheet()
 
-const donations = computed(() =>
-  spreadSheet.value?.sheets.flatMap((s) => s.rowsData).filter((r) => !!r.message)
+const donationsWithMessages = computed(
+  () => spreadSheet.value?.sheets.flatMap((s) => s.rowsData).filter((r) => !!r.message) ?? []
 )
 </script>

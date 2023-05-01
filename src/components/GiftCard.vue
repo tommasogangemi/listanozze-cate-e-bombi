@@ -14,6 +14,7 @@
         color="primary"
         height="15"
         rounded
+        :class="gift.donatedPercentage > 48 ? 'text-neutral' : ''"
         class="mb-4"
       >
         <template v-slot:default="{ value }">
@@ -23,7 +24,8 @@
 
       <div class="d-flex justify-space-between">
         <span>Contiributo libero</span>
-        <span>Disponibili: {{ gift.availableAmount }}€</span>
+        <span v-if="gift.availableAmount > 0">Disponibili: {{ gift.availableAmount }}€</span>
+        <span v-else>Regalato!</span>
       </div>
     </v-card-text>
   </v-card>

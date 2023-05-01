@@ -49,7 +49,17 @@ export const useSpreadsheet = () => {
   }
 
   const addRow = async (sheetName: string, inputs: UserSheetInputs) => {
-    const values = [ORDERED_USER_INPUTS.map((key) => inputs[key] ?? '')]
+    // turning object into array of cells and adding the current date cell
+    const values = [
+      ORDERED_USER_INPUTS.map((key) => inputs[key] ?? ''),
+      [
+        new Date().toLocaleDateString('it-IT', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })
+      ]
+    ]
 
     await appendToSpreadSheet(CFG.spreadSheetId, sheetName, values)
 
