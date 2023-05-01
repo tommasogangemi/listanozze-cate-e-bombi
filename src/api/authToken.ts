@@ -21,7 +21,7 @@ const isTokenAboutToExpire = (token: TokenResponse) => {
 }
 
 const refreshToken = async () => {
-  const res = await fetch(`${CFG.serverUrl}/token`)
+  const res = await fetch(`${CFG.serverUrl}`)
   const fetchedToken = await res.json()
 
   localStorage.setItem('token', JSON.stringify(fetchedToken))

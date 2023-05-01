@@ -1,6 +1,5 @@
 export type GiftConfig = {
   name: string
-  description: string
-  price: number
+  price?: number
   image: string
 }

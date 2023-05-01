@@ -32,9 +32,9 @@ const enrichGifts = computed(() => {
     const rows = (sheet?.rows ?? []).map(rowToObject)
 
     const donatedAmount = rows.reduce((acc, row) => acc + Number(row.donatedAmount), 0)
-    const donatedPercentage = (donatedAmount / gift.price) * 100
+    const donatedPercentage = (donatedAmount / (gift.price ?? 0)) * 100
 
-    const availableAmount = gift.price - donatedAmount
+    const availableAmount = (gift.price ?? 0) - donatedAmount
 
     return {
       ...gift,
@@ -47,7 +47,11 @@ const enrichGifts = computed(() => {
 
 export const useSpreadsheet = () => {
   const get = async () => {
-    spreadSheet.value = await loadSpreadsheet(CFG.spreadSheetId)
+    try {
+      spreadSheet.value = await loadSpreadsheet(CFG.spreadSheetId)
+    } catch (error) {
+      console.error('ERROR in useSpreadsheet.get', error)
+    }
   }
 
   const addRow = async (sheetName: string, inputs: UserSheetInputs) => {
