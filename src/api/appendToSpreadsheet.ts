@@ -9,7 +9,15 @@ export const appendToSpreadSheet = async (
   const { access_token } = await getToken()
 
   const jsBody = {
-    values
+    values: values.map((v) => [
+      ...v,
+
+      new Date().toLocaleDateString('it-IT', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    ])
   }
 
   return fetch(

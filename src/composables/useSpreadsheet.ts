@@ -20,25 +20,19 @@ const ORDERED_USER_INPUTS: (keyof UserSheetInputs)[] = ['donorName', 'donatedAmo
 
 const spreadSheet = ref<SpreadSheet>()
 
-const rowToObject = (row: string[]) => ({
-  donorName: row[0],
-  donatedAmount: row[1],
-  message: row[2]
-})
-
 const enrichGifts = computed(() => {
   return CFG.itemsList.map((gift) => {
     const sheet = spreadSheet.value?.sheets.find((sheet) => sheet.name === gift.name)
-    const rows = (sheet?.rows ?? []).map(rowToObject)
+    const rowsData = sheet?.rowsData ?? []
 
-    const donatedAmount = rows.reduce((acc, row) => acc + Number(row.donatedAmount), 0)
+    const donatedAmount = rowsData.reduce((acc, row) => acc + Number(row.donatedAmount), 0)
     const donatedPercentage = (donatedAmount / (gift.price ?? 0)) * 100
 
     const availableAmount = (gift.price ?? 0) - donatedAmount
 
     return {
       ...gift,
-      rows,
+      rowsData,
       donatedPercentage,
       availableAmount
     }

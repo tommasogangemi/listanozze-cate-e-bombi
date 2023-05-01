@@ -7,6 +7,8 @@
             <List />
           </Suspense>
 
+          <MessagesSection />
+
           <InfoSection />
         </v-col>
       </v-row>
@@ -17,4 +19,5 @@
 <script setup lang="ts">
 import InfoSection from './components/InfoSection.vue'
 import List from './components/List.vue'
+import MessagesSection from './components/MessagesSection.vue'
 </script>

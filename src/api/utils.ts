@@ -1,3 +1,4 @@
+import type { UserSheetInputs } from '@/composables/useSpreadsheet'
 import type google from 'googleapis'
 
 export type Sheet = {
@@ -5,12 +6,19 @@ export type Sheet = {
   name: string
   headers: string[]
   rows: string[][]
+  rowsData: UserSheetInputs[]
 }
 
 export type SpreadSheet = {
   id: string
   sheets: Sheet[]
 }
+
+const rowToObject = (row: string[]): UserSheetInputs => ({
+  donorName: row[0] ?? '',
+  donatedAmount: row[1] ?? '',
+  message: row[2]
+})
 
 const parseSingleSheet = (sheet: google.sheets_v4.Schema$Sheet): Sheet => {
   const rawRowsArray =
@@ -24,7 +32,8 @@ const parseSingleSheet = (sheet: google.sheets_v4.Schema$Sheet): Sheet => {
     id: sheet.properties?.sheetId!,
     name: sheet.properties?.title!,
     rows,
-    headers: headers ?? []
+    headers: headers ?? [],
+    rowsData: rows.map(rowToObject)
   }
 }
 
