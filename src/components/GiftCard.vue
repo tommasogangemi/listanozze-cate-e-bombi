@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded class="h-100" :disabled="gift.availableAmount < 0">
+  <v-card rounded class="h-100" :disabled="!!gift.price && gift.availableAmount < 0">
     <v-img :src="gift.image" cover />
     <v-card-title class="text-center d-flex justify-space-between">
       <span class="font-weight-medium">{{ gift.name }}</span>

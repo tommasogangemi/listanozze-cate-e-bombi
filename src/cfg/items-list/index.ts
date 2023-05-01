@@ -2,7 +2,7 @@ import type { GiftConfig } from './types'
 
 export const itemsList: GiftConfig[] = [
   {
-    name: 'Safari in tanzania',
+    name: 'Safari in Tanzania',
     image: 'safari-tanzania.png'
   },
   {

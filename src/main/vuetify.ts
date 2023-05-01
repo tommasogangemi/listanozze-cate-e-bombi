@@ -39,11 +39,11 @@ export const vuetify = createVuetify({
   defaults: {
     VTextField: {
       variant: 'outlined',
-      color: 'primary'
+      color: 'primary-light'
     },
     VTextarea: {
       variant: 'outlined',
-      color: 'primary'
+      color: 'primary-light'
     }
   }
 })

@@ -6,8 +6,6 @@ const BASE_URL = 'https://sheets.googleapis.com/v4/spreadsheets'
 const GOOGLE_CLIENT_ID = '807456610735-pl3avc541l77ig87cgcjdd5lknoclts0.apps.googleusercontent.com'
 const SERVER_URL = 'https://cate-e-bombi-server.vercel.app/token'
 
-console.log('NODE ENV', process.env.NODE_ENV)
-
 export const CFG = {
   itemsList,
   spreadSheetId,

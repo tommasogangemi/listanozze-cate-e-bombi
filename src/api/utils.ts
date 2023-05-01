@@ -36,8 +36,6 @@ const parseSingleSheet = (sheet: google.sheets_v4.Schema$Sheet): Sheet => {
     row.filter((cell, idx): cell is string => idx < 4 || !!cell)
   )
 
-  console.log('aaaaaaaaaaaaaa', rows, rows.map(rowToObject))
-
   return {
     id: sheet.properties?.sheetId!,
     name: sheet.properties?.title!,
