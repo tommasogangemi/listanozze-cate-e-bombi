@@ -2,7 +2,7 @@
   <v-app class="bg-primary-light">
     <v-main>
       <v-row justify="center" class="my-6">
-        <v-col cols="12" md="8" class="bg-neutral rounded-lg pos-r">
+        <v-col cols="12" md="8" class="bg-neutral rounded-lg">
           <PageHeader />
 
           <List />
