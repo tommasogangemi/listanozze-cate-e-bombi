@@ -1,11 +1,11 @@
 <template>
-  <v-container>
+  <v-container class="mt-2">
     <v-row align="center" class="mb-4">
       <v-col>
         <v-divider />
       </v-col>
       <v-col cols="auto">
-        <h2 id="informazioni" class="text-accent font-weight-medium">Informazioni</h2>
+        <h2 id="informazioni" class="pretty-font font-weight-bold text-accent">Informazioni</h2>
       </v-col>
       <v-col>
         <v-divider />
@@ -19,7 +19,7 @@
       <v-col order="1" order-md="2">
         <div>
           <span class="text-primary font-weight-bold mr-2">Vi aspettiamo il:</span>
-          <span>2 settembre 2023 ore 11</span>
+          <span>2 settembre 2023, 11:00</span>
         </div>
 
         <div>

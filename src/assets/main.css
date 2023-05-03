@@ -1,5 +1,19 @@
 @import './base.css';
 
+@font-face {
+  font-family: 'Barlista';
+  src: url('Barlista.ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('Avenir.ttc');
+}
+
+* {
+  font-family: 'Avenir', sans-serif;
+}
+
 #app {
   /* max-width: 1280px; */
   /* margin: 0 auto;
@@ -22,4 +36,8 @@ a {
 
 .v-btn {
   text-transform: none !important;
+}
+
+.pretty-font {
+  font-family: 'Barlista', sans-serif;
 }

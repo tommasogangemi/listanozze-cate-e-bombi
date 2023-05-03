@@ -1,11 +1,11 @@
 <template>
-  <v-container v-if="donationsWithMessages.length > 3">
+  <v-container v-if="donationsWithMessages.length > 3" class="mt-4">
     <v-row align="center" class="mb-4">
       <v-col>
         <v-divider />
       </v-col>
       <v-col cols="auto">
-        <h2 id="messaggi" class="text-accent font-weight-medium">Messaggi</h2>
+        <h2 id="messaggi" class="pretty-font font-weight-bold text-accent">Messaggi</h2>
       </v-col>
       <v-col>
         <v-divider />
@@ -14,7 +14,12 @@
 
     <v-row justify="center">
       <v-col cols="12" md="10">
-        <v-card flat variant="outlined" class="bg-white overflow-y-auto" height="408">
+        <v-card
+          flat
+          class="bg-white overflow-y-auto"
+          height="408"
+          style="border: 1px solid rgb(var(--v-theme-accent))"
+        >
           <v-card-text class="py-0">
             <template
               v-for="(donationMessage, idx) in donationsWithMessages"
