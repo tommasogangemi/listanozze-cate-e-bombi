@@ -41,3 +41,9 @@ a {
 .pretty-font {
   font-family: 'Barlista', sans-serif;
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

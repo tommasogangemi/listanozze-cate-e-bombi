@@ -2,7 +2,7 @@
   <v-card rounded class="h-100" :disabled="!!gift.price && gift.availableAmount < 0">
     <v-img :src="gift.image" cover />
     <v-card-title class="text-center d-flex justify-space-between">
-      <span class="font-weight-medium">{{ gift.name }}</span>
+      <span class="font-weight-medium truncate">{{ gift.name }}</span>
       <span v-if="!!gift.price" class="font-weight-medium"> {{ gift.price }}€ </span>
     </v-card-title>
 

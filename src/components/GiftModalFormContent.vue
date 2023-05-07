@@ -1,11 +1,16 @@
 <template>
-  <v-row>
+  <v-row justify="space-between" align="center">
+    <v-col cols="12" sm="auto" class="font-weight-medium text-primary text-h4 pb-0 pb-sm-3">
+      <span class="">{{ gift.name }}</span>
+    </v-col>
+
     <v-col
       cols="12"
-      class="font-weight-medium text-primary d-flex justify-space-between align-center"
+      sm="auto"
+      class="font-weight-medium text-primary text-h5 text-right pb-0 pb-sm-3"
+      v-if="!!gift.price"
     >
-      <span class="text-h4">{{ gift.name }}</span>
-      <span v-if="!!gift.price" class="text-h5">Disponibili: {{ gift.availableAmount }}€</span>
+      <span class="text-h5">Disponibili: {{ gift.availableAmount }}€</span>
     </v-col>
   </v-row>
 
