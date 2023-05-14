@@ -53,11 +53,8 @@ export const useSpreadsheet = () => {
     const values = [
       [
         ...ORDERED_USER_INPUTS.map((key) => inputs[key] ?? ''),
-        new Date().toLocaleDateString('it-IT', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })
+        // adding the date and formatting into a string that can be used to instantiate a Date object
+        new Date().toLocaleDateString('it-IT').split('/').reverse().join('-')
       ]
     ]
 

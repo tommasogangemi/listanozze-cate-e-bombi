@@ -2,7 +2,7 @@ import type { UserSheetInputs } from '@/composables/useSpreadsheet'
 import type google from 'googleapis'
 
 type RowData = UserSheetInputs & {
-  date: string
+  date: Date
 }
 
 export type Sheet = {
@@ -18,12 +18,14 @@ export type SpreadSheet = {
   sheets: Sheet[]
 }
 
-const rowToObject = (row: string[]): RowData => ({
-  donorName: row[0] ?? '',
-  donatedAmount: row[1] ?? '',
-  message: row[2],
-  date: row[3] ?? ''
-})
+const rowToObject = (row: string[]): RowData => {
+  return {
+    donorName: row[0] ?? '',
+    donatedAmount: row[1] ?? '',
+    message: row[2],
+    date: new Date(row[3]!) ?? ''
+  }
+}
 
 const parseSingleSheet = (sheet: google.sheets_v4.Schema$Sheet): Sheet => {
   const rawRowsArray =

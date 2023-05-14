@@ -32,7 +32,13 @@
                       {{ donationMessage.donorName }}
                     </span>
                     <span class="text-grey"> - </span>
-                    <span class="text-grey">{{ donationMessage.date }}</span>
+                    <span class="text-grey">{{
+                      donationMessage.date.toLocaleDateString('it-IT', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })
+                    }}</span>
                   </div>
                   <div>{{ donationMessage.message }}</div>
                 </v-col>
@@ -57,6 +63,10 @@ defineComponent({ name: 'MessagesSection' })
 const { spreadSheet } = useSpreadsheet()
 
 const donationsWithMessages = computed(
-  () => spreadSheet.value?.sheets.flatMap((s) => s.rowsData).filter((r) => !!r.message) ?? []
+  () =>
+    spreadSheet.value?.sheets
+      .flatMap((s) => s.rowsData)
+      .filter((r) => !!r.message && !!r.date)
+      .sort((d1, d2) => d2.date.getTime() - d1.date.getTime()) ?? []
 )
 </script>
