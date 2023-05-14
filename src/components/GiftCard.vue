@@ -69,6 +69,7 @@ const isGifted = computed(() => !!gift.value.price && gift.value.availableAmount
 <style scoped>
 .card-wrapper {
   position: relative;
+  height: 100%;
 }
 
 .gifted-overlay {
