@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="donationsWithMessages.length > 3" class="mt-4">
+  <v-container v-if="donationsWithMessages.length > 0" class="mt-4">
     <v-row align="center" class="mb-4">
       <v-col>
         <v-divider />
@@ -17,7 +17,7 @@
         <v-card
           flat
           class="bg-white overflow-y-auto"
-          height="408"
+          max-height="408"
           style="border: 1px solid rgb(var(--v-theme-accent))"
         >
           <v-card-text class="py-0">
