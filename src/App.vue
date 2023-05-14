@@ -1,46 +1,24 @@
 <template>
-  <header></header>
+  <v-app class="bg-primary-light">
+    <v-main>
+      <v-row justify="center" class="my-6">
+        <v-col cols="12" md="8" class="bg-neutral rounded-lg">
+          <PageHeader />
 
-  <main style="height: 100%">
-    <!-- <h2>Nè di Venere nè di Marte...</h2>
+          <List />
 
-    <div v-for="item in CFG.itemsList" :key="item.id">
-      <div>
-        {{ item.name }}
-        -
-        {{ item.price }} Euro
-      </div>
-      <img :src="item.image" :alt="item.name" width="500" />
-    </div> -->
+          <MessagesSection />
 
-    <img id="landing-img" src="@/assets/landing_img.jpg" alt="landing" />
-
-    <div class="footer">
-      <h1 class="footer-text">...coming soon</h1>
-    </div>
-  </main>
+          <InfoSection />
+        </v-col>
+      </v-row>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup lang="ts">
-import { CFG } from '@/cfg'
-// import { useSpreadsheet } from './composables/useSpreadsheet'
-
-// const { get } = useSpreadsheet(CFG.spreadSheetIds.gifts)
-
-// get()
+import InfoSection from './components/InfoSection.vue'
+import List from './components/List.vue'
+import PageHeader from './components/PageHeader.vue'
+import MessagesSection from './components/MessagesSection.vue'
 </script>
-
-<style scoped>
-#landing-img {
-  width: 100%;
-}
-
-.footer {
-  width: 100%;
-  padding: 36px 0;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>

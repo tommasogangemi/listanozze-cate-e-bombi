@@ -1,19 +1,72 @@
+import { appendToSpreadSheet } from '@/api/appendToSpreadsheet'
+import { loadSpreadsheet } from '@/api/loadSpreadsheet'
+import type { SpreadSheet } from '@/api/utils'
 import { CFG } from '@/cfg'
-import type google from 'googleapis'
+import type { GiftConfig } from '@/cfg/items-list/types'
+import { computed, ref } from 'vue'
 
-const BASE_URL = 'https://sheets.googleapis.com/v4/spreadsheets/'
+export type EnrichedGift = GiftConfig & {
+  availableAmount: number
+  donatedPercentage: number
+}
 
-export const useSpreadsheet = (spreadsheetId: string) => {
+export type UserSheetInputs = {
+  donorName: string
+  donatedAmount: string
+  message?: string
+}
+
+const ORDERED_USER_INPUTS: (keyof UserSheetInputs)[] = ['donorName', 'donatedAmount', 'message']
+
+const spreadSheet = ref<SpreadSheet>()
+
+const enrichGifts = computed(() => {
+  return CFG.itemsList.map((gift) => {
+    const sheet = spreadSheet.value?.sheets.find((sheet) => sheet.name === gift.name)
+    const rowsData = sheet?.rowsData ?? []
+
+    const donatedAmount = rowsData.reduce((acc, row) => acc + Number(row.donatedAmount), 0)
+    const donatedPercentage = (donatedAmount / (gift.price ?? 0)) * 100
+
+    const availableAmount = (gift.price ?? 0) - donatedAmount
+
+    return {
+      ...gift,
+      rowsData,
+      donatedPercentage,
+      availableAmount
+    }
+  })
+})
+
+export const useSpreadsheet = () => {
   const get = async () => {
-    const res = await fetch(`${BASE_URL}${spreadsheetId}?key=${CFG.googleApiKey}`)
-    const data = await res.json()
+    try {
+      spreadSheet.value = await loadSpreadsheet(CFG.spreadSheetId)
+    } catch (error) {
+      console.error('ERROR in useSpreadsheet.get', error)
+    }
+  }
 
-    console.log('GET', data)
+  const addRow = async (sheetName: string, inputs: UserSheetInputs) => {
+    // turning object into array of cells and adding the current date cell
+    const values = [
+      [
+        ...ORDERED_USER_INPUTS.map((key) => inputs[key] ?? ''),
+        // adding the date and formatting into a string that can be used to instantiate a Date object
+        new Date().toLocaleDateString('it-IT').split('/').reverse().join('-')
+      ]
+    ]
 
-    return data as google.sheets_v4.Schema$Spreadsheet
+    await appendToSpreadSheet(CFG.spreadSheetId, sheetName, values)
+
+    get()
   }
 
   return {
-    get
+    spreadSheet,
+    enrichGifts,
+    get,
+    addRow
   }
 }

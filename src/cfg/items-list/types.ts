@@ -1,7 +1,5 @@
-export type ProductConfig = {
-  id: number
+export type GiftConfig = {
   name: string
-  description: string
-  price: number
+  price?: number
   image: string
 }

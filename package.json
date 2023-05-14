@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "googleapis": "^114.0.0",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vuetify": "^3.1.13"
   },
   "devDependencies": {
+    "@mdi/font": "^7.2.96",
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.0.0",
