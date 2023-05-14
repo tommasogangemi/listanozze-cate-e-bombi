@@ -14,7 +14,7 @@
 
     <v-row>
       <v-col v-for="gift in enrichGifts" cols="12" md="6" lg="4" :key="gift.name">
-        <GiftCard :gift="gift" @click="focusedGift = gift" />
+        <GiftCard :gift="gift" @card-click="focusedGift = $event" />
       </v-col>
     </v-row>
 

@@ -13,10 +13,16 @@
     </v-row>
 
     <v-row>
-      <v-col cols="auto" order="2" order-md="1">
-        <v-img src="https://via.placeholder.com/1280x720" width="396" class="rounded-lg" />
+      <v-col cols="auto" v-if="$vuetify.display.mdAndUp">
+        <v-img
+          src="chieas-san-francesco.jpeg"
+          aspect-ratio="1.7"
+          cover
+          width="396"
+          class="rounded-lg"
+        />
       </v-col>
-      <v-col order="1" order-md="2" class="d-flex py-md-6 flex-column justify-space-between">
+      <v-col class="d-flex py-md-6 flex-column justify-space-between">
         <div>
           <div>
             <span class="mr-2">Vi aspettiamo il</span>
@@ -34,6 +40,15 @@
           </div>
         </div>
 
+        <v-img
+          v-if="$vuetify.display.smAndDown"
+          src="chieas-san-francesco.jpeg"
+          aspect-ratio="1.7"
+          cover
+          max-width="396"
+          class="rounded-lg mt-6"
+        />
+
         <div class="mt-6 mt-md-0">
           <div class="text-primary font-weight-bold">I nostri recapiti</div>
           <div>
@@ -50,7 +65,7 @@
 
     <v-row>
       <v-col class="bg-neutral">
-        <h2 class="pretty-font text-accent text-center font-weight-bold my-2">
+        <h2 class="text-accent text-center font-weight-bold my-2">
           Siamo felici di condividere questo momento di gioia con voi!
         </h2>
       </v-col>
