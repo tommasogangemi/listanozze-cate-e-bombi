@@ -31,7 +31,7 @@ export const itemsList: GiftConfig[] = [
   },
   {
     name: 'Orologio da parete',
-    price: 85,
+    price: 150,
     image: 'orologio-cucina.png'
   },
   {
