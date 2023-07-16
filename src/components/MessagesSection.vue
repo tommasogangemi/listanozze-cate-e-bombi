@@ -40,7 +40,7 @@
                       })
                     }}</span>
                   </div>
-                  <div>{{ donationMessage.message }}</div>
+                  <div style="white-space: pre-line">{{ donationMessage.message }}</div>
                 </v-col>
               </v-row>
 
