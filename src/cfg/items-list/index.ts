@@ -35,13 +35,13 @@ export const itemsList: GiftConfig[] = [
     image: 'orologio-cucina.png'
   },
   {
-    name: 'Hogwarts legacy',
-    price: 45,
-    image: 'hogwarts-legacy.png'
-  },
-  {
     name: 'Accessori da cucina',
     price: 100,
     image: 'utensili-cucina.png'
+  },
+  {
+    name: 'Hogwarts legacy',
+    price: 45,
+    image: 'hogwarts-legacy.png'
   }
 ]
