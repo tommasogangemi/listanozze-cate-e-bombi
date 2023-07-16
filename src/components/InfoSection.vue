@@ -35,7 +35,7 @@
               href="https://www.google.com/maps/place/Parrocchia+di+San+Francesco/@43.777858,11.4365713,16z/data=!4m7!3m6!1s0x132ba97aa40cc7fb:0x6ab726ac6e33fbd9!8m2!3d43.777858!4d11.444811!15sCh5jaGllc2EgZGkgc2FuIGZyYW5jZXNjbyBwZWxhZ2-SAQ9jYXRob2xpY19jaHVyY2jgAQA!16s%2Fg%2F11pqvvgx24?shorturl=1"
               target="_blank"
               class="font-weight-bold"
-              >Piazza Giuseppe Verdi 1, San Francesco</a
+              >Piazza Giuseppe Verdi 1, San Francesco, Pelago</a
             >
           </div>
         </div>
@@ -53,11 +53,11 @@
           <div class="text-primary font-weight-bold">I nostri recapiti</div>
           <div>
             <span class="text-primary font-weight-bold">Caterina: </span> +39 346 6423048 - Via
-            Forlivese 45/B
+            Forlivese 45/B, San Francesco, Pelago
           </div>
           <div>
             <span class="text-primary font-weight-bold">Mattia: </span> +39 335 1597891 - Via
-            Gramsci 43/E
+            Gramsci 43/E, Reggello
           </div>
         </div>
       </v-col>

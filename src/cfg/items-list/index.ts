@@ -20,8 +20,28 @@ export const itemsList: GiftConfig[] = [
     image: 'divano-due-posti.png'
   },
   {
-    name: 'Armadio camera da letto',
-    price: 970,
-    image: 'armadio-camera.png'
+    name: 'Specchio ingresso',
+    price: 85,
+    image: 'specchio-ingresso.png'
+  },
+  {
+    name: 'Forno a microonde',
+    price: 100,
+    image: 'forno-microonde.png'
+  },
+  {
+    name: 'Orologio da parete',
+    price: 85,
+    image: 'orologio-cucina.png'
+  },
+  {
+    name: 'Accessori da cucina',
+    price: 100,
+    image: 'utensili-cucina.png'
+  },
+  {
+    name: 'Hogwarts legacy',
+    price: 45,
+    image: 'hogwarts-legacy.png'
   }
 ]
